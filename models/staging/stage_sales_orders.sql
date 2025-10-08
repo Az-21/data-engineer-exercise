@@ -1,5 +1,5 @@
 {{ config(
-    materialized='view'
+    materialized="view"
 ) }}
 
 with source_data as (
@@ -13,7 +13,7 @@ with source_data as (
         Category,
         OrderStatus,
         QuantityOrdered::INTEGER * PriceEach::DECIMAL(10,2) as TotalAmount
-    from read_csv_auto('data/SalesOrders.csv', header=true)
+    from read_csv_auto("data/SalesOrders.csv", header=true)
 )
 
 select * from source_data
